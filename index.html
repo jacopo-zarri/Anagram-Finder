@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Anagrams Solver</title>
+</head>
+
+<body>
+  <script>
+    let words = [
+      "rope",
+      "pore",
+      "repo",
+      "red rum",
+      "murder",
+      "listen",
+      "silent",
+      "endeavour",
+    ];
+    let anagrams = {};
+    for (let i = 0; i < words.length; i++) {
+      let string = words[i];
+      let sorted = string
+        .toLowerCase()
+        .replace(/\s/g, "")
+        .split("")
+        .sort()
+        .join("");
+      let array = [];
+      if (anagrams[sorted]) {
+        array = anagrams[sorted];
+        array.push(string);
+      } else {
+        anagrams[sorted] = [string];
+      }
+    }
+    console.log(Object.values(anagrams));
+  </script>
+</body>
+
+</html>
