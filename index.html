@@ -22,8 +22,8 @@
     for (let i = 0; i < words.length; i++) {
       let string = words[i];
       let sorted = string
-        .toLowerCase()
         .replace(/\s/g, "")
+        .toLowerCase()
         .split("")
         .sort()
         .join("");
